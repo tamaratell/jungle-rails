@@ -61,12 +61,15 @@ class OrdersController < ApplicationController
 
   def get_line_items(order_id)
     line_items = LineItem.where(order_id: order_id)
+
     line_items.map do |item|
       {
         product: item.product,
         image: item.product.image,
         description: item.product.description,
-        name: item.product.name
+        name: item.product.name,
+        price: item.product.price_cents,
+        quantity: item.quantity
       }
     end
 
