@@ -40,7 +40,7 @@ class Admin::ProductsController < ApplicationController
 
   def authenticate_admin
     authenticate_or_request_with_http_basic do |username, password|
-      username == 'Jungle' && password == 'book'
+      username == ENV['USERNAME'] && password == ENV['PASSWORD']
     end
   end
 
