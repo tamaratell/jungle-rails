@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @line_items = get_line_items(@order.id)
   end
 
   def create
@@ -55,5 +56,20 @@ class OrdersController < ApplicationController
     order.save!
     order
   end
+
+  private
+
+  def get_line_items(order_id)
+    line_items = LineItem.where(order_id: order_id)
+    line_items.map do |item|
+      {
+        product: item.product,
+        image: item.product.image,
+        description: item.product.description,
+        name: item.product.name
+      }
+    end
+
+end
 
 end
