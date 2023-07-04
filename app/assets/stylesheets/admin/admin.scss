@@ -1,0 +1,26 @@
+.admin-stats-container {
+  display: flex;
+  justify-content: space-evenly;
+
+  .admin-stats {
+    width: 50%;
+    margin: 2rem 4rem 0 4rem;
+    border: 2px solid green;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    text-align: center;
+    background-image: url(https://www.shutterstock.com/image-photo/green-leaves-tropical-plants-bush-260nw-1620014101.jpg);
+    background-position: center;
+    color: #FFFFFF;
+
+    h3 {
+      margin-top: 0;
+      color: palevioletred;
+    }
+
+
+  }
+}
